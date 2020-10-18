@@ -24,21 +24,22 @@ public class MainActivity extends AppCompatActivity {
         btnLogin_client=(EditText)findViewById(R.id.customerbt);
 
 
-        btnLogin_client.setOnClickListener(new View.OnClickListener()){
+        btnLogin_client.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent intent=new Intent(getApplicationContext(),Welcome_cutomer.class);
                 startActivity(intent);
             }
-        }
+        });
 
-        btnSign_up.setOnClickListener(new View.OnClickListener()){
+
+        btnSign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
                 Intent intent=new Intent(getApplicationContext(),Sign_up.class);
                 startActivity(intent);
             }
-        }
+        });
 
 
 
