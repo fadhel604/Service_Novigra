@@ -22,25 +22,46 @@ public class MainActivity extends AppCompatActivity {
         btnSign_up=(Button) findViewById(R.id.bt_signUp);
 
         btnLogin_client=(Button) findViewById(R.id.customerbt);
+        btnLogin_employee=(Button) findViewById(R.id.employeebt);
 
 
         btnLogin_client.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(this,Welcome_cutomer.class);
-                String customer_name=userName.getText().toString();
+                Intent intent = new Intent(this, Welcome_cutomer.class);
+                String customer_name = userName.getText().toString();
 
-                intent.putExtra("userName",customer_name);
+                intent.putExtra("userName", customer_name);
                 startActivity(intent);
+
 
             }
         });
 
 
+        btnLogin_employee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(userName.length()==0){
+                    userName.setError("Enter Username");
+                }
+                else if(password.length()==0){
+                    password.setError("Enter password");
+                }else {
+                    Intent intent = new Intent(this, Welcome_cutomer.class);
+                    String employee_name = userName.getText().toString();
+
+                    intent.putExtra("userName", employee_name);
+                    startActivity(intent);
+                }
+
+            }
+        });
+
         btnSign_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent intent=new Intent(getApplicationContext(),Sign_up.class);
+                Intent intent=new Intent(getApplicationContext(),MainActivity2.class);
                 startActivity(intent);
             }
         });
