@@ -27,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
         btnLogin_client.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),Welcome_cutomer.class);
+                Intent intent=new Intent(this,Welcome_cutomer.class);
+                String customer_name=userName.getText().toString();
+
+                intent.putExtra("userName",customer_name);
                 startActivity(intent);
+
             }
         });
 
