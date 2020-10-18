@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="324dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/welcome" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:text="NAME HERE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="213dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="200dp"
+        app:srcCompat="@drawable/trash" />
+</LinearLayout>
