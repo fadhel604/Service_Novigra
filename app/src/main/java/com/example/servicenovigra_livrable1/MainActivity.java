@@ -28,12 +28,21 @@ public class MainActivity extends AppCompatActivity {
         btnLogin_client.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(this, Welcome_cutomer.class);
-                String customer_name = userName.getText().toString();
-
-                intent.putExtra("userName", customer_name);
-                startActivity(intent);
-
+                if ((password.length() == 0)&&(userName.length()==0)) {
+                    userName.setError("Enter Username");
+                    password.setError("Enter password");
+                }
+                else if (userName.length() == 0) {
+                    userName.setError("Enter Username");
+                } else if (password.length() == 0) {
+                    password.setError("Enter password");
+                }
+                else {
+                    Intent intent = new Intent(getApplicationContext(), Welcome_cutomer.class);
+                    String customer_name = userName.getText().toString();
+                    intent.putExtra("userName", customer_name);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -42,18 +51,26 @@ public class MainActivity extends AppCompatActivity {
         btnLogin_employee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if ((password.length() == 0)&&(userName.length()==0)) {
+                    userName.setError("Enter Username");
+                    password.setError("Enter password");
+                }
+
                 if(userName.length()==0){
                     userName.setError("Enter Username");
                 }
                 else if(password.length()==0){
                     password.setError("Enter password");
-                }else {
-                    Intent intent = new Intent(this, Welcome_cutomer.class);
+                }
+
+                else {
+                    Intent intent = new Intent(getApplicationContext(), Welcome_employee.class);
                     String employee_name = userName.getText().toString();
 
                     intent.putExtra("userName", employee_name);
                     startActivity(intent);
                 }
+
 
             }
         });

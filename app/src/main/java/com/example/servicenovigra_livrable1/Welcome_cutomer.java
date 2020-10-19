@@ -22,5 +22,6 @@ public class Welcome_cutomer extends AppCompatActivity {
             text.setText(name.getString("userName"));
         }
 
+
     }
 }
